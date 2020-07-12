@@ -18,6 +18,8 @@ class CreateThreadTable extends Migration
             $table->integer('parent_id')->nullable();
             $table->integer('user_id');
             $table->text('message');
+            $table->integer('aggree')->default('0');
+            $table->integer('disaggree')->default('0');
             $table->timestamps();
         });
     }

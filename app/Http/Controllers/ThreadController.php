@@ -21,7 +21,7 @@ class ThreadController extends Controller
     public function index()
     {
         $threads = Thread::whereNull('parent_id')->orderBy('created_at', 'desc')->get();
-        return view('thread', [
+        return view('main2', [
             'threads' => $threads
         ]);        
     }
@@ -86,7 +86,9 @@ class ThreadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Thread::findOrFail($id)
+            ->increment($request->increment);
+        return redirect('/threads');
     }
 
     /**
@@ -99,4 +101,5 @@ class ThreadController extends Controller
     {
         //
     }
+
 }

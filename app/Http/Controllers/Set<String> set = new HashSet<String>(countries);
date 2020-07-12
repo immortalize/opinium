@@ -1,0 +1,3 @@
+Set<String> set = new HashSet<String>(countries);
+    for (String r : set) {
+        System.out.println(r + ": " + Collections.frequency(list, r));
