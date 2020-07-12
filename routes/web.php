@@ -13,12 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main_static_2');
-});
+// Route::get('/', function () {
+//     return view('main_static_2');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'ThreadController@index');
 
 Route::resource('threads', 'ThreadController');
